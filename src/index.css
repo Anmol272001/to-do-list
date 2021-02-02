@@ -1,5 +1,133 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+:root{
+  --bg-color-dark : #161722;
+  --card-color-dark : #25273c;
+  --text-color-dark : #b0b3cc;
+}
+
+.App{
+  height: 100vh;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  padding-top: 50px;
+}
+
+.Container{
+  width: 550px;
+  margin: auto;
+  padding: 1rem;
+  color: white;
+  align-items: center;
+}
+
+/* Top Nav styling */
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+nav h1{
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+nav button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Input field Styling */
+
+form{
+  margin-bottom: 2rem;
+}
+
+.input-field{
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 5px;
+  background-color: var(--card-color-dark);
+  border: none;
+  font-size: 1rem;
+  color: var(--text-color-dark);
+  box-shadow: 0px 0px 4px 8px rgba(22,23,34,1);
+  outline: none;
+}
+
+::placeholder{
+  font-family: 'Josefin Sans', sans-serif;
+  opacity: .8;
+}
+
+
+/* Todo Item Styling */
+
+.todo-item{
+  width: 100%;
+  background-color: var(--card-color-dark);
+  box-shadow: 0px 0px 4px 8px rgba(22,23,34,1);
+  padding: 1.2rem;
+  border-bottom: 1px solid hsla(233, 6%, 32%, 0.877);
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.todo-item label{
+  color: var(--text-color-dark);
+  position: relative;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+input[type = "checkbox"]:checked + label{
+  text-decoration: line-through;
+  color: #b0b3cc9c;
+
+}
+
+.todo-item label::before{
+  content : '';
+  background: url('./assets/icon-check.svg');
+  background-position: center;
+  background-size: contain;
+  background-image: linear-gradient(90deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%);
+  border-radius: 50%;
+  width:18px;
+  height: 18px;
+  position: absolute;
+  left: -5px;
+  top : -1px;
+
+  transform: scale(0);
+  transition: all .3s ease ;
+}
+
+input[type = "checkbox"]:checked + label::before{
+  transform: scale(1);
+}
+
+.todo-item label::after{
+  content: "";
+  border : 1px solid  hsl(220, 98%, 61%);
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  left : -7px;
+  top: -2px;
 }
