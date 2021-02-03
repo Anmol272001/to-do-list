@@ -1,11 +1,12 @@
 import React from 'react'
 
-function TodoList({ todos, handleDelete, taskDone, toggleDone}) {
+function TodoList({ todos, handleDelete, toggleDone, filteredTodos}) {
 
     return (
         <div className="todo-list">
+            <div className="todo-items">
             {
-                todos.map((todo) => {
+                filteredTodos.map((todo) => {
                     return (
                         <div
                             key = {todo.id}
@@ -23,10 +24,7 @@ function TodoList({ todos, handleDelete, taskDone, toggleDone}) {
                     )
                 })
             }
-            <div className="bottom-status">
-                    {taskDone} items to-do
-            </div>
-            
+            </div>            
         </div>
     )
 }

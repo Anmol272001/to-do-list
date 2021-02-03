@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'react-uuid'
+import BottomBar from './Components/BottomBar';
 
 import Input from './Components/Input';
 import Navbar from './Components/Navbar';
@@ -7,9 +8,14 @@ import TodoList from './Components/TodoList';
 
 function App() {
 
+  //States 
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState([]);
   const [taskDone, setTaskDone] = useState(0);
+  const [status, setStatus] = useState('All');
+  const [filteredTodos, setFilteredTodos] = useState([]);
+
+  // Functions
 
   function submitHandler(e) {
     e.preventDefault();
@@ -40,9 +46,35 @@ function App() {
     }))
   }
 
+  function filterHandler() {
+    switch (status) {
+      case 'Completed':
+        setFilteredTodos(todos.filter(todo => todo.done === true));
+        break;
+      case 'Active':
+        setFilteredTodos(todos.filter(todo => todo.done === false));
+        break;
+      default:
+        setFilteredTodos(todos);
+        break;
+    }
+  }
+
+  function clearHandler() {
+    setTodos(todos.filter(todo => todo.done === false))
+  }
+
+  // Use EFFECTS -
+
   useEffect((
     checkItems
-  ),[todos])
+  ), [todos])
+  
+
+  useEffect(() => {
+    filterHandler()
+  }, [todos, status])
+  
 
   return (
     <div className="App">
@@ -56,8 +88,13 @@ function App() {
           setTodos = {setTodos}
           todos={todos}
           handleDelete={handleDelete}
-          taskDone={taskDone}
-          toggleDone ={toggleDone} />
+          filteredTodos = {filteredTodos}
+          toggleDone={toggleDone} />
+        <BottomBar
+          status = {status}
+          setStatus={setStatus}
+          clearHandler = {clearHandler}
+          taskDone={taskDone} />
       </div>
     </div>
   );
