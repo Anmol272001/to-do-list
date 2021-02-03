@@ -10,7 +10,8 @@ function Input({value, setValue, submitHandler}) {
                 onChange={(e) => {
                     setValue(e.target.value);
                 }}
-                value = {value}
+                value={value}
+                required
             />
             <button style={{display : "none"}}></button>
         </form>
