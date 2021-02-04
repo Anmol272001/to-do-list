@@ -14,6 +14,7 @@ function App() {
   const [taskDone, setTaskDone] = useState(0);
   const [status, setStatus] = useState('All');
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [dark, setDark] = useState(true);
 
   // Functions
 
@@ -95,9 +96,9 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className={dark ? "App dark-mode" : "App light-mode"}>
       <div className="Container">
-        <Navbar />
+        <Navbar setDark={setDark} dark={dark}/>
         <Input
           value={inputValue}
           setValue={setInputValue}

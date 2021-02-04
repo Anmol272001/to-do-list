@@ -4,7 +4,7 @@ function TodoList({ todos, handleDelete, toggleDone, filteredTodos}) {
 
     return (
         <div className="todo-list">
-            <div className="todo-items">
+            <div className="todo-items" drop>
             {
                 filteredTodos.map((todo) => {
                     return (

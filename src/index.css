@@ -7,11 +7,25 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-:root{
-  --bg-color-dark : #161722;
-  --card-color-dark : #25273c;
-  --text-color-dark : #b0b3cc;
-  --active-btn : hsl(220, 98%, 61%);
+.dark-mode{
+  --bg-color : #161722;
+  --card-color : #25273c;
+  --text-color : #b0b3cc;
+  --active-btn : hsl(220, 96%, 55%);
+  --box-shadow : rgba(22, 23, 34, 0.39);
+  --divider-color : hsla(233, 6%, 32%, 0.61);
+  --bg-image : url('././assets/images/bg-desktop-dark.jpg')
+}
+
+.light-mode{
+  --bg-color : #FAFAFA;
+  --card-color : #fff;
+  --text-color : #484B6A;
+  --active-btn : hsl(220, 97%, 63%);
+  --box-shadow : rgba(43, 44, 56, 0.178);
+  --hover-color : #656994;
+  --divider-color :#E4E5F1;
+  --bg-image : url('././assets/images/bg-desktop-light.jpg')
 }
 
 /* Scroll bar */
@@ -21,20 +35,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--card-color-dark); 
+  background: var(--card-color); 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-color-dark); 
+  background: var(--text-color); 
 }
  
 
 .App{
   height: 100vh;
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   padding-top: 50px;
-  background-image: url('./assets/images/bg-desktop-dark.jpg');
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -79,11 +93,11 @@ form{
   width: 100%;
   padding: 1.2rem;
   border-radius: 5px;
-  background-color: var(--card-color-dark);
+  background-color: var(--card-color);
   border: none;
   font-size: 1rem;
-  color: var(--text-color-dark);
-  box-shadow: 0px 4px 8px 0px rgba(22, 23, 34, 0.39);
+  color: var(--text-color);
+  box-shadow: 0px 5px 10px 0px var(--box-shadow);
   outline: none;
 }
 
@@ -96,8 +110,8 @@ form{
 /* Todo Item Styling */
 
 .todo-list{
-  background-color: var(--card-color-dark);
-  box-shadow: 0px 5px 10px 0px rgba(22,23,34,1);
+  background-color: var(--card-color);
+  box-shadow: 0px 5px 10px 0px var(--box-shadow);
   height: max-content; 
   border-bottom-left-radius: 5px ;
   border-bottom-right-radius: 5px ;
@@ -110,10 +124,10 @@ form{
 
 .todo-item{
   width: 100%;
-  background-color: var(--card-color-dark);
-  color: var(--text-color-dark);
+  background-color: var(--card-color);
+  color: var(--text-color);
   padding: 1.2rem 1.5rem 1rem 3rem;
-  border-bottom: 1px solid hsla(233, 6%, 32%, 0.61);
+  border-bottom: 1px solid var(--divider-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -147,7 +161,7 @@ input[type="checkbox"]{
 }
 
 .todo-item label{
-  color: var(--text-color-dark);
+  color: var(--text-color);
   position: relative;
   padding-left: 2rem;
   width: 100%;
@@ -195,9 +209,9 @@ input[type = "checkbox"]:checked + label::before{
 
 .bottom-status{
   border-radius: 0 0 5px 5px;
-  box-shadow: 0px 2px 4px 0px rgba(22,23,34,1);
+  box-shadow: 0px 5px 10px 0px var(--box-shadow);
   padding: 1rem 2rem;
-  background-color: var(--card-color-dark);
+  background-color: var(--card-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -205,13 +219,13 @@ input[type = "checkbox"]:checked + label::before{
 }
 
 .task-completed{
-  color: #b0b3cc8a;
+  color: #b0b3cc;
 }
 
 .select-options button{
   background-color: transparent;
   border: none;
-  color: #b0b3cc8a;
+  color: #b0b3cc;
   padding: 0 .5rem;
   transition: color .3s ease;
   cursor: pointer;
@@ -220,11 +234,11 @@ input[type = "checkbox"]:checked + label::before{
 }
 
 .select-options button:hover{
-  color: white;
+  color : var(--hover-color);
 }
 
 .clear-completed{
-  color: var(--text-color-dark);
+  color: var(--text-color);
   cursor: pointer;
 }
 
