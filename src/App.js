@@ -64,7 +64,24 @@ function App() {
     setTodos(todos.filter(todo => todo.done === false))
   }
 
+  function setLocalStorage() {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  function getLocalStorage() {
+    if (localStorage.getItem('todos') === null) {
+      localStorage.setItem('todos', JSON.stringify([]));
+    }
+    else {
+      setTodos(JSON.parse(localStorage.getItem('todos')))
+    }
+  }  
+
   // Use EFFECTS -
+
+  useEffect((
+    getLocalStorage
+  ),[])
 
   useEffect((
     checkItems
@@ -73,6 +90,7 @@ function App() {
 
   useEffect(() => {
     filterHandler()
+    setLocalStorage()
   }, [todos, status])
   
 

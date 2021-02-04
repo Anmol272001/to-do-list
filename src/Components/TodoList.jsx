@@ -9,6 +9,7 @@ function TodoList({ todos, handleDelete, toggleDone, filteredTodos}) {
                 filteredTodos.map((todo) => {
                     return (
                         <div
+                            draggable
                             key = {todo.id}
                             className="todo-item">
                             <span
