@@ -1,15 +1,14 @@
 import React from 'react'
 
-function BottomBar({ taskDone, status, setStatus, clearHandler }) {
-
+function MobileBar({ status, setStatus }) {
+    
     function handleStatus(inp) {
         setStatus(inp)
     }
 
     return (
-        <div className="bottom-status">
-            <div className="task-completed" >{taskDone} items to-do</div>
-            <div className="select-options">
+        <div>
+            <div className="mobile-bar">
                 <button
                     className = {status === 'All' ? "btn-active" : ""}
                     onClick={() => handleStatus('All')}>All</button>
@@ -20,12 +19,8 @@ function BottomBar({ taskDone, status, setStatus, clearHandler }) {
                     className = {status === 'Completed' ? "btn-active" : ""}
                     onClick={() => handleStatus('Completed')}>Completed</button>
             </div>
-            <div
-                onClick = {clearHandler}
-                className="clear-completed">Clear Completed</div>
-
         </div>
     )
 }
 
-export default BottomBar
+export default MobileBar

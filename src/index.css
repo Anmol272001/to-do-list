@@ -118,7 +118,7 @@ form{
 }
 
 .todo-items{
-  max-height: 350px;
+  max-height: 365px;
   overflow: auto;
 }
 
@@ -156,61 +156,13 @@ form{
   opacity: 1;
 }
 
-input[type="checkbox"]{
-  display: none;
-}
-
-.todo-item label{
-  color: var(--text-color);
-  position: relative;
-  padding-left: 2rem;
-  width: 100%;
-}
-
-input[type = "checkbox"]:checked + label{
-  text-decoration: line-through;
-  color: #b0b3cc9c;
-
-}
-
-.todo-item label::before{
-  content : '';
-  background: url('./assets/icon-check.svg');
-  background-position: center;
-  background-size: contain;
-  background-image: linear-gradient(90deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%);
-  border-radius: 50%;
-  width:18px;
-  height: 18px;
-  position: absolute;
-  left: -5px;
-  top : -1px;
-
-  transform: scale(0);
-  transition: all .3s ease ;
-}
-
-input[type = "checkbox"]:checked + label::before{
-  transform: scale(1);
-}
-
-.todo-item label::after{
-  content: "";
-  border : 1px solid  hsl(220, 98%, 61%);
-  position: absolute;
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  left : -7px;
-  top: -2px;
-}
 
 /* Bottom Bar */
 
 .bottom-status{
   border-radius: 0 0 5px 5px;
   box-shadow: 0px 5px 10px 0px var(--box-shadow);
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem 1rem 2rem;
   background-color: var(--card-color);
   display: flex;
   justify-content: space-between;
@@ -244,4 +196,111 @@ input[type = "checkbox"]:checked + label::before{
 
 .select-options .btn-active{
   color:var(--active-btn);
+}
+
+.mobile-bar{
+  display: none;
+}
+
+.bottom-text{
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: .8rem;
+  color: var(--text-color);
+  opacity: .6;
+}
+
+@media screen and (max-width : 600px){
+
+  /* Overall Variables */
+
+  .light-mode{
+    --bg-image : url('././assets/images/bg-mobile-light.jpg');
+  }
+
+  .dark-mode{
+    --bg-image : url('././assets/images/bg-mobile-dark.jpg');
+  }
+
+  /* Main Wrapper */
+
+  .App{
+    padding-top: 25px;
+  }
+
+  .Container{
+    width: 350px;
+    max-width: 95%;
+  }
+
+  /* Nav Bar */
+
+  nav{
+    margin-bottom: 2rem;
+  }
+
+  /* Form component */
+
+  form{
+    margin-bottom: 1rem;
+  }
+
+  .input-field{
+    font-size: .9rem;
+  }
+
+  /* TodoList Component */
+
+  .todo-item{
+    padding: 1.1rem 1.5rem .9rem 3rem;
+    font-size: .9rem;
+  }
+
+  .todo-item .exit{
+    font-size: .9rem;
+  }
+
+  .todo-items{
+    max-height: 320px;
+  }
+
+  /* Bottom bar */
+
+  .select-options{
+    display: none;
+  }
+
+  .bottom-status{
+    font-size: .7rem;
+  }
+
+  /* Mobile bar */
+  .mobile-bar{
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px var(--box-shadow);
+    padding: 1rem 4.5rem;
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: .8rem;
+  }
+
+  .mobile-bar button{
+    background-color: transparent;
+    border: none;
+    color: #b0b3cc;
+    padding: 0;
+    transition: color .3s ease;
+    cursor: pointer;
+    outline: none;
+    font-weight: 700;
+  }
+
+  .mobile-bar .btn-active{
+    color:var(--active-btn);
+  }
+
 }

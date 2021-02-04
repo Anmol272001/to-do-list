@@ -3,6 +3,7 @@ import uuid from 'react-uuid'
 import BottomBar from './Components/BottomBar';
 
 import Input from './Components/Input';
+import MobileBar from './Components/MobileBar';
 import Navbar from './Components/Navbar';
 import TodoList from './Components/TodoList';
 
@@ -10,7 +11,11 @@ function App() {
 
   //States 
   const [inputValue, setInputValue] = useState('');
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([{
+    id: 1,
+    value: "Hello 👋",
+    done : false
+  }]);
   const [taskDone, setTaskDone] = useState(0);
   const [status, setStatus] = useState('All');
   const [filteredTodos, setFilteredTodos] = useState([]);
@@ -96,7 +101,7 @@ function App() {
   
 
   return (
-    <div className={dark ? "App dark-mode" : "App light-mode"}>
+    <div className={dark === true ? "App dark-mode" : "App light-mode"}>
       <div className="Container">
         <Navbar setDark={setDark} dark={dark}/>
         <Input
@@ -114,6 +119,13 @@ function App() {
           setStatus={setStatus}
           clearHandler = {clearHandler}
           taskDone={taskDone} />
+        <MobileBar
+          status = {status}
+          setStatus={setStatus} />
+        {
+          todos !==[] && <div className="bottom-text">Drag and drop to reorder list</div>
+        }
+        
       </div>
     </div>
   );
