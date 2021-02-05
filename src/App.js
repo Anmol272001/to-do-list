@@ -113,7 +113,8 @@ function App() {
           todos={todos}
           handleDelete={handleDelete}
           filteredTodos = {filteredTodos}
-          toggleDone={toggleDone} />
+          toggleDone={toggleDone}
+          setLocalStorage={setLocalStorage} />
         <BottomBar
           status = {status}
           setStatus={setStatus}
