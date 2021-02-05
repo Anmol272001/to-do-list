@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Project Name : PV-Task-List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description:
+A useful Website Application, to manage, reorder your Daily Tasks, with complete Data Privacy.
 
-## Available Scripts
+## Features: 
+1. Adding Tasks from input field provided.
+2. Marking Tasks Complete, by clicking on them.
+3. Reordering the order of the Tasks.
+4. Tracking the number of tasks to complete.
+5. Different Sections for looking up the completed Tasks & Incomplete Tasks.
+6. Clear complete option for removing all the completed tasks.
+7. Toggling between Ninja(Dark) and Saint(Light) Mode, as per your convenience.
+8. Data Privacy, with your notes being saved in the local storage of your Web Browser.
+9. Data persistance, untill you close your tab.
+10. Mobile Supported.
 
-In the project directory, you can run:
+## Technologies Used:
+- HTML, CSS and ReactJs.
+- React Beautiful DnD library.
 
-### `npm start`
+## UI Design:
+- Inspired from FrontEnd mentor challenge.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deployment:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/faa014b0-b555-4786-b45f-c6fd2ca841f8/deploy-status)](https://app.netlify.com/sites/day-taskify/deploys)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**You can find the site live [here](https://day-taskify.netlify.app/)**
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Coming soon:
+- Progressive Web App feature.
