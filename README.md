@@ -3,6 +3,12 @@
 ## Description:
 A useful Website Application, to manage, reorder your Daily Tasks, with complete Data Privacy.
 
+## Snapshots:
+![Dark-mobile](https://user-images.githubusercontent.com/70899048/107066218-b3765780-6803-11eb-800c-a11f3376a22a.JPG)
+![light-mobile](https://user-images.githubusercontent.com/70899048/107066226-b5401b00-6803-11eb-953b-acd015c262eb.JPG)
+![Dark-pc](https://user-images.githubusercontent.com/70899048/107066224-b5401b00-6803-11eb-90fe-b21280dd85c9.JPG)
+![light-pc](https://user-images.githubusercontent.com/70899048/107066227-b5d8b180-6803-11eb-8b73-707c02582236.JPG)
+
 ## Features: 
 1. Adding Tasks from input field provided.
 2. Marking Tasks Complete, by clicking on them.
